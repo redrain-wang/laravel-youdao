@@ -1,0 +1,56 @@
+.youdao_container {
+    display: none;
+    position: absolute;
+}
+
+.youdao_content {
+    border: 1px solid #eee;
+    min-width: 200px;
+    max-width: 600px;
+    max-height: 300px;
+    padding: 5px 15px 15px 15px;
+}
+
+.youdao_content h2 {
+    margin: 0;
+}
+
+.youdao_content2 {
+    padding-top: 20px;
+}
+
+.youdao_content3 {
+    padding-top: 20px;
+}
+
+.web_key {
+    color: #000000;
+}
+
+.web_value {
+    color: #a94442;
+}
+
+.voice_icon {
+    background: url("http://shared.ydstatic.com/dict/v2016/result/new-sprite.png");
+    outline: 0;
+    display: inline-block;
+    width: 16px;
+    height: 25px;
+    background-position: -121px 0;
+    vertical-align: bottom;
+    margin-left: .4em;
+}
+
+.youdao_explain {
+    font-size: 14px;
+    color: #333;
+}
+
+.youdao_close {
+    float: right;
+    height: 10px;
+    display: inline-block;
+    color: #666;
+    cursor: pointer;
+}

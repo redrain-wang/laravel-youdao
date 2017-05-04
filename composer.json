@@ -1,0 +1,23 @@
+{
+    "name": "redrain/laravel-youdao",
+    "description": "youdao for laravel5",
+    "keywords": ["youdao"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "redrain.wang",
+            "email": "wangredrain@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Redrain\\YouDao\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    }
+}
