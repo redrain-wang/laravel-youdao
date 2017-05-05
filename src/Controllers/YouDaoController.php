@@ -19,7 +19,7 @@ class YouDaoController extends BaseController
 
         $array = json_decode($json, 1);
 
-        return $this->getHtml($array);
+        return $array['errorCode'] == 0 ? $this->getHtml($array) : '';
     }
 
     /**
