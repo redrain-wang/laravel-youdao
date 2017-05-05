@@ -58,7 +58,7 @@ class YouDaoController extends BaseController
 
     public function getHtml($array)
     {
-        $html = "<div class='youdao_content'><h2>{$array['query']}<span class='youdao_close'>&times</span></h2>";
+        $html = "<div class='youdao_content'><h2>{$array['query']}</h2>";
         $html .= "<div class='youdao_content2'><b>{$array['translation'][0]}</b></div>";
         if(isset($array['basic']['explains']) && count($array['basic']['explains']) > 0){
             foreach($array['basic']['explains'] as $e_item){

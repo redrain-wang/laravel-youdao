@@ -35,14 +35,14 @@ class YouDaoServiceProvider extends ServiceProvider
                 'uses' => 'YouDaoController@get',
             ]);
         });
-
+        if ($app->runningInConsole() || $app->environment('testing')) {
+            return;
+        }
         ob_start();
         echo '<script src="'.route('laravel.youdao.assets.js').'"></script>';
         echo '<link rel="stylesheet" type="text/css" property="stylesheet" href="'.route('laravel.youdao.assets.css').'">';
         echo "<div class='youdao_container' style='display:none;position:absolute;background:#fff;'></div>";
-        if ($app->runningInConsole() || $app->environment('testing')) {
-            return;
-        }
+
 
         //发布配置文件
         $this->publishes([__DIR__.'/config/youdao.php' => config_path('youdao.php')]);

@@ -7,3 +7,6 @@
 
     Redrain\YouDao\YouDaoServiceProvider::class,
     
+# 发布配置文件
+
+    php artisan vendor:publish    
