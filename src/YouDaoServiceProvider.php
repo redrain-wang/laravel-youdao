@@ -12,6 +12,9 @@ class YouDaoServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        //发布配置文件
+        $this->publishes([__DIR__.'/config/youdao.php' => config_path('youdao.php')]);
+
         $app = app();
 
         $routeConfig = [
@@ -43,9 +46,6 @@ class YouDaoServiceProvider extends ServiceProvider
         echo '<link rel="stylesheet" type="text/css" property="stylesheet" href="'.route('laravel.youdao.assets.css').'">';
         echo "<div class='youdao_container' style='display:none;position:absolute;background:#fff;'></div>";
 
-
-        //发布配置文件
-        $this->publishes([__DIR__.'/config/youdao.php' => config_path('youdao.php')]);
     }
 
     /**
