@@ -14,12 +14,10 @@ class YouDaoController extends BaseController
     {
         $url = 'http://fanyi.youdao.com/openapi.do?keyfrom=' . $this->youdaoKeyFrom . '&key=' . $this->youdaoApiKey .
             '&type=data&doctype=json&version=1.1&q=' . urlencode(trim($keyWord));
-
         $json = self::curlHttpGet($url);
 
         $array = json_decode($json, 1);
-
-        return $array['errorCode'] == 0 ? $this->getHtml($array) : '';
+        return $array['errorCode'] == 0 ? $this->getHtml($array) : '';          //errorCode == 50 表示key不对
     }
 
     /**
@@ -58,10 +56,16 @@ class YouDaoController extends BaseController
 
     public function getHtml($array)
     {
+
+
         $html = "<div class='youdao_content'><h2>{$array['query']}</h2>";
-        $html .= "<div class='youdao_content2'><b>{$array['translation'][0]}</b></div>";
-        if(isset($array['basic']['explains']) && count($array['basic']['explains']) > 0){
-            foreach($array['basic']['explains'] as $e_item){
+
+        if (isset($array['translation'])) {
+
+            $html .= "<div class='youdao_content2'><b>{$array['translation'][0]}</b></div>";
+        }
+        if (isset($array['basic']['explains']) && count($array['basic']['explains']) > 0) {
+            foreach ($array['basic']['explains'] as $e_item) {
                 $html .= "<p class='youdao_explain'>{$e_item}</p>";
             }
         }
